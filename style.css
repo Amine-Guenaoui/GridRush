@@ -1,0 +1,177 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+/* Game container styles */
+#game-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+#game-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* HUD styles */
+#hud {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#hud div {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#score-display {
+    color: #ffcc00;
+}
+
+#lives-display {
+    color: #ff6666;
+}
+
+#level-display {
+    color: #66ccff;
+}
+
+/* Webcam styles */
+#webcam {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 160px;
+    height: 120px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    z-index: 10;
+    opacity: 0.7;
+}
+
+/* Overlay styles */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.overlay-content {
+    text-align: center;
+    max-width: 500px;
+    padding: 30px;
+    background-color: rgba(40, 40, 60, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(100, 100, 255, 0.5);
+}
+
+.overlay h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #66ccff;
+    text-shadow: 0 0 10px rgba(100, 200, 255, 0.8);
+}
+
+.overlay p {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.overlay button {
+    background-color: #66ccff;
+    border: none;
+    color: #000;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 20px;
+}
+
+.overlay button:hover {
+    background-color: #99ddff;
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Loading spinner */
+.loader {
+    border: 5px solid #333;
+    border-top: 5px solid #66ccff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#webcam-status {
+    margin-top: 15px;
+    color: #66ccff;
+}
+
+#loading-status {
+    color: #66ccff;
+}
+
+/* Game instruction text */
+.instruction {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    animation: fadeOut 2s forwards;
+    animation-delay: 3s;
+    z-index: 15;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; visibility: hidden; }
+}

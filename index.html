@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GridRush - 3D Browser Game</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Load TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <!-- Load the Handpose model -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose"></script>
+    <!-- Load Three.js -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <!-- OrbitControls for optional camera rotation -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+    <!-- Game container with canvas for Three.js rendering -->
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+        
+        <!-- HUD overlay for game info -->
+        <div id="hud">
+            <div id="score-display">Score: <span id="score">1000</span></div>
+            <div id="lives-display">Lives: <span id="lives">3</span></div>
+            <div id="level-display">Level: <span id="level">1</span></div>
+        </div>
+        
+        <!-- Webcam video element (hidden by default) -->
+        <video id="webcam" autoplay playsinline></video>
+        
+        <!-- Game start overlay -->
+        <div id="start-overlay" class="overlay">
+            <div class="overlay-content">
+                <h1>GridRush</h1>
+                <p>Navigate through the grid using hand gestures</p>
+                <p>Move your index finger in the direction you want to go</p>
+                <button id="start-button">Start Game</button>
+                <div id="webcam-status">Waiting for webcam access...</div>
+            </div>
+        </div>
+        
+        <!-- Game over overlay -->
+        <div id="gameover-overlay" class="overlay hidden">
+            <div class="overlay-content">
+                <h1>Game Over</h1>
+                <p>Final Score: <span id="final-score">0</span></p>
+                <p>Level Reached: <span id="final-level">0</span></p>
+                <button id="restart-button">Play Again</button>
+            </div>
+        </div>
+        
+        <!-- Loading overlay -->
+        <div id="loading-overlay" class="overlay">
+            <div class="overlay-content">
+                <h2>Loading Game...</h2>
+                <div class="loader"></div>
+                <p id="loading-status">Initializing...</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main game script -->
+    <script src="main.js"></script>
+</body>
+</html>
