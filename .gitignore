@@ -1,0 +1,16 @@
+# Node.js dependencies
+node_modules/
+
+# npm package files
+package-lock.json
+
+# Editor files
+.vscode/*
+!.vscode/tasks.json
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -26,8 +26,24 @@
             <div id="level-display">Level: <span id="level">1</span></div>
         </div>
         
-        <!-- Webcam video element (hidden by default) -->
-        <video id="webcam" autoplay playsinline></video>
+        <!-- Webcam container with overlaid indicators -->
+        <div id="webcam-container">
+            <video id="webcam" autoplay playsinline></video>
+            
+            <!-- Hand detection indicator overlaid on webcam -->
+            <div id="hand-indicator" class="not-detected">No Hand Detected</div>
+            
+            <!-- Gesture direction indicator overlaid on webcam -->
+            <div id="gesture-indicator">
+                <div class="arrow arrow-up"></div>
+                <div class="arrow arrow-down"></div>
+                <div class="arrow arrow-left"></div>
+                <div class="arrow arrow-right"></div>
+            </div>
+            
+            <!-- Hand skeleton overlay (will be added via canvas) -->
+            <canvas id="hand-overlay"></canvas>
+        </div>
         
         <!-- Game start overlay -->
         <div id="start-overlay" class="overlay">
